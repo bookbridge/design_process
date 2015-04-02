@@ -5,8 +5,12 @@ from process_flow.models import Process, Document, Relationship
 admin.autodiscover()
 
 urlpatterns = patterns('',
-                       url(r'^$',
+                       url(r'/process/$',
                            ListView.as_view(
                                         queryset=Process.objects.order_by('id'),
-                                        context_object_name='process_list',
-                                        template_name='process_flow/index.html')))
+                                        template_name='process_flow/list.html')),
+                       url(r'/document/$',
+                           ListView.as_view(
+                                        queryset=Document.objects.order_by('id'),
+                                        template_name='process_flow/list.html')),
+)
