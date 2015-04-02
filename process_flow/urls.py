@@ -13,4 +13,12 @@ urlpatterns = patterns('',
                            ListView.as_view(
                                         queryset=Document.objects.order_by('id'),
                                         template_name='process_flow/list.html')),
+                       url(r'/process/(?P<pk>\d+)/$',
+                           DetailView.as_view(
+                                        model=Process,
+                                        template_name='process_flow/detail.html')),
+                       url(r'/document/(?P<pk>\d+)/$',
+                           DetailView.as_view(
+                                        model=Document,
+                                        template_name='process_flow/detail.html')),                          
 )
