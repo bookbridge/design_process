@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}プロセスの詳細{% endblock title %}
+
+{% block extrahead %}
+
+{% endblock %}
+
+{% block content %}
+<h2 class="page-header">{{ object.name }}の詳細</h2>
+<h3>ID</h3>
+<p>{{ object.id }}
+<h3>工程名</h3>
+<p>{{ object.name }}</p>
+<h3>説明</h3>
+<p>{{ object.description }}</p>
+
+<h3>Input Document</h3>
+<ul>
+    {% for i in in_docs %}
+    <li><a href="../../document/{{ i.id }}">{{ i.document.name }}</a></li>
+    {% endfor %}
+</ul>
+
+<h3>Output Document</h3>
+<ul>
+    {% for i in out_docs %}
+    <li><a href="../../document/{{ i.id }}">{{ i.document.name }}</a></li>
+    {% endfor %}
+</ul>
+
+<footer class="footer">
+    <p class="pull-right"> 2015. Sony Corpolation ALL Rights Reserved.</p>
+    <p class="pull-left"><a href="../../">Back to TOP</a>
+</footer>
+
+{% endblock content %}

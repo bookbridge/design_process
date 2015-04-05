@@ -15,7 +15,14 @@ class IndexView(TemplateView):
 
 
 class DocumentDetailView(DetailView):
-    template_name = 'process_flow/detail.html'
+    model = Document
+    template_name = 'process_flow/detail_document.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(DocumentDetailView, self).get_context_data(**kwargs)
+        # Add in a QuerySet
+        context['rel_processes'] = Relationship.objects.filter(document__name=self.object.name)
+        return context
 
 
 class ProcessDetailView(DetailView):
@@ -24,7 +31,7 @@ class ProcessDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(ProcessDetailView, self).get_context_data(**kwargs)
-        # Add in a QuerySet of all the books
+        # Add in a QuerySet
         context['in_docs'] = Relationship.objects.filter(relation='input', process__name=self.object.name)
         context['out_docs'] = Relationship.objects.filter(relation='output', process__name=self.object.name)
         return context

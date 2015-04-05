@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}プロセスの一覧{% endblock title %}
+
+{% block extrahead %}
+{% endblock %}
+
+{% block content %}
+<h3 class="page-header">プロセスの詳細</h3>
+<p>工程名:{{ object.name }}
+<p>説明：{{ object.description }}
+<p>id:{{ object.process_id }}
+
+{% endblock content %}
