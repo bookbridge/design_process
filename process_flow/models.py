@@ -5,6 +5,7 @@ from django.db import models
 
 class Document(models.Model):
     name = models.CharField(max_length=128)
+    description = models.TextField()
     document_id = models.IntegerField('Document ID')
 
     def __str__(self):
