@@ -3,18 +3,19 @@ from django.db import models
 # Create your models here.
 
 
-class Process(models.Model):
+class Document(models.Model):
     name = models.CharField(max_length=128)
-    description = models.TextField()
-    process_id = models.IntegerField('Process ID')
+    document_id = models.IntegerField('Document ID')
 
     def __str__(self):
         return self.name
 
 
-class Document(models.Model):
+class Process(models.Model):
     name = models.CharField(max_length=128)
-    document_id = models.IntegerField('Document ID')
+    description = models.TextField()
+    process_id = models.IntegerField('Process ID')
+    related_documents = models.ManyToManyField(Document, through='Relationship')
 
     def __str__(self):
         return self.name

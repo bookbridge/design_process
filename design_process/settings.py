@@ -26,6 +26,7 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
+INTERNAL_IPS =('192.168.56.1')
 
 # Application definition
 
@@ -38,7 +39,9 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'process_flow',
     'bootstrapform',
-)
+    'debug_toolbar',
+    )
+
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
