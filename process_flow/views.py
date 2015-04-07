@@ -1,6 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views.generic import TemplateView, DetailView, ListView
-from process_flow.models import Process, Document, Relationship
+from process_flow.models import Process, Document, Relationship, Requirement
 # Create your views here.
 
 
@@ -13,6 +13,8 @@ class IndexView(TemplateView):
     def documents(self):
         return Document.objects.all()
 
+    def requirements(self):
+        return Requirement.objects.all()
 
 class DocumentDetailView(DetailView):
     model = Document
@@ -35,3 +37,9 @@ class ProcessDetailView(DetailView):
         context['in_docs'] = Relationship.objects.filter(relation='input', process__name=self.object.name)
         context['out_docs'] = Relationship.objects.filter(relation='output', process__name=self.object.name)
         return context
+
+
+class RequirementDetailView(DetailView):
+    model = Requirement
+    template_name = 'process_flow/detail_requirement.html'
+
