@@ -7,6 +7,29 @@
 
 {% block content %}
 <h1 class="page-header">ISO26262対応車載製品の開発フロー</h1>
+<h3>プロセスフロー図</h3>
+<img src="/static/img/actsample.svg"/>
+
+<h3>要求の一覧</h3>
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>プロセス名</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for r in view.requirements %}
+    <tr>
+        <td>{{ r.id }}</td>
+        <td><a href="./requirement/{{ r.id }}">{{ r.requirement_number }}</a></td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+
+
 <h3>プロセスの一覧</h3>
 <table class="table table-striped table-bordered">
     <thead>

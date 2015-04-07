@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}要求の詳細{% endblock title %}
+
+{% block extrahead %}
+{% endblock %}
+
+{% block content %}
+<h2 class="page-header">{{ object.requirement_number }}の詳細</h2>
+<h3>Requirement Number</h3>
+<p>{{ object.requirement_number }}
+<h3>規格の原文</h3>
+<blockquote>
+    <p>{{ object.original_requirement }}</p>
+</blockquote>
+
+<h3>規格の実装</h3>
+<p>{{ object.interpreted_requirement }}</p>
+
+<h3>Related Documents</h3>
+<ul>
+    {% for d in object.related_documents.all %}
+    <li><a href="../../document/{{d.id}}">{{ d.name }}</a></li>
+    {% endfor %}
+</ul>
+
+<h3>Related Process</h3>
+<ul>
+    {% for p in object.related_process.all %}
+    <li><a href="../../process/{{ p.id }}">{{ p.name }}</a></li>
+    {% endfor %}
+</ul>
+
+<footer class="footer">
+    <p class="pull-right"> 2015. Sony Corpolation ALL Rights Reserved.</p>
+    <p class="pull-left"><a href="../../">Back to TOP</a>
+</footer>
+
+{% endblock content %}
