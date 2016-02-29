@@ -5,6 +5,7 @@ from django.db import models
 
 class Document(models.Model):
     name = models.CharField(max_length=128)
+    summary = models.TextField(blank=True)
     description = models.TextField()
     document_id = models.IntegerField('Document ID')
 
@@ -14,6 +15,7 @@ class Document(models.Model):
 
 class Process(models.Model):
     name = models.CharField(max_length=128)
+    summary = models.TextField()
     description = models.TextField()
     process_id = models.IntegerField('Process ID')
     related_documents = models.ManyToManyField(Document, through='Relationship')
