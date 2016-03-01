@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load markdown_deux_tags %}
 
 {% block title %}プロセスの詳細{% endblock title %}
 
@@ -15,7 +16,7 @@
 <h3>概要 Summary</h3>
 <p>{{ object.summary }}</p>
 <h3>説明 Description</h3>
-<p>{{ object.description | linebreaksbr }}</p>
+<p>{{ object.description | markdown }}</p>
 
 <h3>入力文書 Input Document</h3>
 <ul>
