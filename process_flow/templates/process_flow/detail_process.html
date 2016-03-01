@@ -3,42 +3,61 @@
 
 {% block title %}プロセスの詳細{% endblock title %}
 
-{% block extrahead %}
-
-{% endblock %}
+{% block extrahead %}{% endblock %}
 
 {% block content %}
-<h2 class="page-header">{{ object.name }}の詳細</h2>
-<h3>ID</h3>
-<p>{{ object.id }}
-<h3>工程名 Process</h3>
-<p>{{ object.name }}</p>
-<h3>概要 Summary</h3>
-<p>{{ object.summary | markdown }}</p>
-<h3>説明 Description</h3>
-<p>{{ object.description | markdown }}</p>
+  <h2 class="page-header">{{ object.name }}の詳細</h2>
+  <h3>ID</h3>
+  <p>{{ object.id }}</p>
 
-<h3>入力文書 Input Document</h3>
-<ul>
-    {% for i in in_docs %}
-    <li><a href="../../document/{{ i.document.id }}">{{ i.document.name }}</a></li>
-    {% endfor %}
-</ul>
+  <div class="bs-callout bs-callout-info">
+    <h3>工程名 Process</h3>
+    <p>{{ object.name }}</p>
+  </div>
 
-<h3>出力文書 Output Document</h3>
-<ul>
-    {% for i in out_docs %}
-    <li><a href="../../document/{{ i.document.id }}">{{ i.document.name }}</a></li>
-    {% endfor %}
-</ul>
+  <div class="bs-callout bs-callout-info">
+    <h3>概要 Summary</h3>
+    <p>{{ object.summary | markdown }}</p>
+  </div>
 
-<h3>関連する規格要求 Related Requirement</h3>
-<ul>
-    {% for r in object.requirement_set.all %}
-    <li><a href="../../requirement/{{ r.id }}">{{ r.requirement_number }}</a></li>
-    {% endfor %}
-</ul>
+  <div class="bs-callout bs-callout-primary">
+    <h3>説明 Description</h3>
+    <p>{{ object.description | markdown }}</p>
+  </div>
 
-<p class="pull-left"><a href="../../">Back to TOP</a>
+  <div class="bs-callout-warning">
+    <h3>入力文書 Input Document</h3>
+    <ul>
+      {% for i in in_docs %}
+        <li>
+          <a href="../../document/{{ i.document.id }}">{{ i.document.name }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
 
-{% endblock content %}
+  <div class="bs-callout-warning">
+    <h3>出力文書 Output Document</h3>
+    <ul>
+      {% for i in out_docs %}
+        <li>
+          <a href="../../document/{{ i.document.id }}">{{ i.document.name }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="bs-callout-warning">
+    <h3>関連する規格要求 Related Requirement</h3>
+    <ul>
+      {% for r in object.requirement_set.all %}
+        <li>
+          <a href="../../requirement/{{ r.id }}">{{ r.requirement_number }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <p class="pull-left">
+    <a href="../../">Back to TOP</a>
+
+  {% endblock content %}
