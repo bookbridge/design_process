@@ -9,9 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
     <title>ISO26262対応のサイト</title>
-
     <!-- Bootstrap Core CSS -->
     <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
     <style type="text/css">
@@ -46,120 +44,114 @@
           margin: 20px;
         }
         .nav-tabs {
-          margin-bottom: 15px;
+          margin-bottom: 15px
         }
+        .navbar {
+          margin-bottom: 0px
+        }
+
         .progress {
           margin-bottom: 10px;
         }
       }
       footer {
-        padding: 20px 20px;
+        padding: 20px;
         color: #eee;
         background-color: #333;
-        font-size: 80%
+        font-size: 80%;
       }
-
-
 
     </style>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
-
   </head>
 
   <body class="no-thank-yu">
+    <header class="navbar navbar-inverse bs-docs-nav">
+      <div class="container">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="/"><img src="{% static "img/Sony_GPVI_Logo_White.gif" %}" /></a>
+            </div>
 
-    <!-- Navigation -->
-    <div class="bs-component">
-      <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/"><img src={% static 'img/Sony_GPVI_Logo_White.gif' %}></a>
-          </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+              <ul class="nav navbar-nav">
+                <li>
+                  <a href="/processflow/">top
+                    <span class="sr-only">(current)</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">Link</a>
+                </li>
+                <li class="dropdown">
+                  <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown">Dropdown
+                    <span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li>
+                      <a href="#">高坂 穂乃果</a>
+                    </li>
+                    <li>
+                      <a href="#">南 ことり</a>
+                    </li>
+                    <li>
+                      <a href="#">園田 海未</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                      <a href="#">小泉 花陽</a>
+                    </li>
+                    <li>
+                      <a href="#">星空 凛</a>
+                    </li>
+                    <li>
+                      <a href="#">西木野 真姫</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                      <a href="#">矢澤 にこ</a>
+                    </li>
+                    <li>
+                      <a href="#">絢瀬 絵里</a>
+                    </li>
+                    <li>
+                      <a href="#">東條 希</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+              <form class="navbar-form navbar-right" role="search">
+                <div class="form-group">
+                  <input class="form-control" type="text" placeholder="Search">
+                </div>
+                <button class="btn btn-default" type="submit">検索</button>
+              </form>
 
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
-            <ul class="nav navbar-nav">
-              <li>
-                <a href="/processflow/">Top</a>
-              </li>
-              <li>
-                <a href="#">Link</a>
-              </li>
-              <li class="dropdown">
-                <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown">Dropdown
-                  <span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu" role="menu">
-                  <li>
-                    <a href="#">高坂 穂乃果</a>
-                  </li>
-                  <li>
-                    <a href="#">南 ことり</a>
-                  </li>
-                  <li>
-                    <a href="#">園田 海未</a>
-                  </li>
-                  <li class="divider"></li>
-                  <li>
-                    <a href="#">小泉 花陽</a>
-                  </li>
-                  <li>
-                    <a href="#">星空 凛</a>
-                  </li>
-                  <li>
-                    <a href="#">西木野 真姫</a>
-                  </li>
-                  <li class="divider"></li>
-                  <li>
-                    <a href="#">矢澤 にこ</a>
-                  </li>
-                  <li>
-                    <a href="#">絢瀬 絵里</a>
-                  </li>
-                  <li>
-                    <a href="#">東條 希</a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-            <form class="navbar-form navbar-right" role="search">
-              <div class="form-group">
-                <input class="form-control" type="text" placeholder="Search">
-              </div>
-              <button class="btn btn-default" type="submit">検索</button>
-            </form>
+            </div>
           </div>
-        </div>
-      </nav>
-    </div>
+        </nav>
+      </div>
+    </header>
 
     <!-- Page Content -->
     <div class="container">
-
-      <div class="row">
-        <div class="col-lg-12 text-left">
-          {% block content %}
-            {{ content }}
-          {% endblock %}
-        </div>
-      </div>
-      <!-- /.row -->
+      {% block content %}
+        {{ content }}
+      {% endblock %}
     </div>
-
-    <!-- /.container -->
-
     <footer class="bs-docs-footer text-center" role="contentinfo">
       <p>2016 Automovite Business Division ALL RIGHTS RESERVED</p>
-      <p>内容の無断転載を禁止します<br />Do Not Copy or Duplicate Without Permission</p>
-
+      <p>内容の無断転載を禁止します<br/>Do Not Copy or Duplicate Without Permission</p>
     </footer>
 
     <!-- jQuery Version 1.11.1 -->
