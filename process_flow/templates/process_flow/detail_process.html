@@ -14,7 +14,7 @@
 <h3>工程名 Process</h3>
 <p>{{ object.name }}</p>
 <h3>概要 Summary</h3>
-<p>{{ object.summary }}</p>
+<p>{{ object.summary | markdown }}</p>
 <h3>説明 Description</h3>
 <p>{{ object.description | markdown }}</p>
 
