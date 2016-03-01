@@ -8,4 +8,4 @@ urlpatterns = patterns('',
                        # url(r'^$', 'design_process.views.home', name='home'),
                        # url(r'^blog/', include('blog.urls')),
                        url(r'^admin/', include(admin.site.urls)),
-                       url(r'^process_flow', include('process_flow.urls')),)
+                       url(r'^processflow/', include('process_flow.urls')),)

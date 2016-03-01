@@ -1,14 +1,6 @@
-{% extends "base.html" %}
-
-{% block title %}プロセスの一覧{% endblock title %}
-{% block extrahead %}
-{% endblock %}
-
-{% block content %}
-<h1>ISO26262情報のサイト</h1>
-<h2>プロセスフロー</h2>
-<h3>DR0~1まで</h3>
-<svg viewBox="0 0 256 600" xmlns="http://www.w3.org/2000/svg" xmlns:inkspace="http://www.inkscape.org/namespaces/inkscape" xmlns:xlink="http://www.w3.org/1999/xlink"  height="800px">
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg viewBox="0 0 256 600" xmlns="http://www.w3.org/2000/svg" xmlns:inkspace="http://www.inkscape.org/namespaces/inkscape" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs id="defs_block">
     <filter height="1.504" id="filter_blur" inkspace:collect="always" width="1.1575" x="-0.07875" y="-0.252">
       <feGaussianBlur id="feGaussianBlur3780" inkspace:collect="always" stdDeviation="4.2" />
@@ -70,59 +62,3 @@
   <rect fill="white" height="15" stroke="rgb(0,0,0)" width="40" x="188" y="343" />
   <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="24" x="208" y="356">N　G</text>
 </svg>
-
-
-<h2>ISO26262 要求の一覧</h2>
-<table class="table table-striped table-bordered">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>要求 Requirements</th>
-        </tr>
-    </thead>
-    <tbody>
-    {% for r in view.requirements %}
-    <tr>
-        <td>{{ r.id }}</td>
-        <td><a href="./requirement/{{ r.id }}">{{ r.requirement_number }}</a></td>
-    </tr>
-    {% endfor %}
-    </tbody>
-</table>
-<h2>プロセスの一覧</h2>
-<table class="table table-striped table-bordered">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>プロセス名 Process Name</th>
-        </tr>
-    </thead>
-    <tbody>
-    {% for p in view.processes %}
-    <tr>
-        <td>{{ p.id }}</td>
-        <td><a href="./process/{{ p.id }}">{{ p.name }}</a></td>
-    </tr>
-    {% endfor %}
-    </tbody>
-</table>
-
-<h2>ドキュメントの一覧</h2>
-<table class="table table-striped table-bordered">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>ドキュメント名 Documents Name</th>
-        </tr>
-    </thead>
-    <tbody>
-    {% for d in view.documents %}
-    <tr>
-        <td>{{ d.id }}</td>
-        <td><a href="./document/{{ d.id }}">{{ d.name }}</a></td>
-    </tr>
-    {% endfor %}
-    </tbody>
-</table>
-
-{% endblock content %}

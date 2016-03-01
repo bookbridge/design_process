@@ -4,8 +4,8 @@ from process_flow.views import IndexView, ProcessDetailView, DocumentDetailView,
 admin.autodiscover()
 
 urlpatterns = patterns('',
-                       url(r'^/$', IndexView.as_view()),
-                       url(r'/process/(?P<pk>\d+)/$', ProcessDetailView.as_view()),
-                       url(r'/document/(?P<pk>\d+)/$', DocumentDetailView.as_view()),
-                       url(r'/requirement/(?P<pk>\d+)/$', RequirementDetailView.as_view()),
+                       url(r'^$', IndexView.as_view()),
+                       url(r'process/(?P<pk>\d+)/$', ProcessDetailView.as_view()),
+                       url(r'document/(?P<pk>\d+)/$', DocumentDetailView.as_view()),
+                       url(r'requirement/(?P<pk>\d+)/$', RequirementDetailView.as_view()),
                        )

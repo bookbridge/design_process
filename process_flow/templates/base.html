@@ -1,8 +1,8 @@
 {% load staticfiles %}
 <!DOCTYPE html>
-<html lang="{{ LANGUAGE_CODE|default:"en-us" }}">
+<html lang="{{ LANGUAGE_CODE|default:" en-us" }}">
 
-<head>
+  <head>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,105 +10,169 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>ISO26262対応 車載用イメージセンサ設計フロー</title>
+    <title>ISO26262対応のサイト</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    <style type="text/css">
+      body {}
+      @media ( min-width: 768px ) {
+        #banner {
+          min-height: 300px;
+          border-bottom: none;
+        }
+        .bs-docs-section {
+          margin-top: 8em;
+        }
+        .bs-component {
+          position: relative;
+        }
+        .bs-component .modal {
+          position: relative;
+          top: auto;
+          right: auto;
+          left: auto;
+          bottom: auto;
+          z-index: 1;
+          display: block;
+        }
+        .bs-component .modal-dialog {
+          width: 90%;
+        }
+        .bs-component .popover {
+          position: relative;
+          display: inline-block;
+          width: 220px;
+          margin: 20px;
+        }
+        .nav-tabs {
+          margin-bottom: 15px;
+        }
+        .progress {
+          margin-bottom: 10px;
+        }
+      }
+      footer {
+        padding: 20px 20px;
+        color: #eee;
+        background-color: #333;
+        font-size: 80%
+      }
 
-    <!-- Custom CSS -->
-    <style>
-    body {
-        padding-top: 70px;
-        /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
-    }
-    footer {
-        position: relative;
-        bottom: 0;
-        width: 100%;
-        /* Set the fixed height of the footer here */
-        height: 60px;
-        padding-top: 20px;
-        margin-top: 200px;
-        background-color: #222;
-        border-color:#808080;
-    }
-    
+
 
     </style>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
-</head>
+  </head>
 
-<body>
+  <body class="no-thank-yu">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Sony Automotive Business Unit</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="#">About</a>
-                    </li>
-                    <li>
-                        <a href="#">Services</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
+    <div class="bs-component">
+      <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/"><img src={% static 'img/Sony_GPVI_Logo_White.gif' %}></a>
+          </div>
+
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="/processflow/">Top</a>
+              </li>
+              <li>
+                <a href="#">Link</a>
+              </li>
+              <li class="dropdown">
+                <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown">Dropdown
+                  <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                  <li>
+                    <a href="#">高坂 穂乃果</a>
+                  </li>
+                  <li>
+                    <a href="#">南 ことり</a>
+                  </li>
+                  <li>
+                    <a href="#">園田 海未</a>
+                  </li>
+                  <li class="divider"></li>
+                  <li>
+                    <a href="#">小泉 花陽</a>
+                  </li>
+                  <li>
+                    <a href="#">星空 凛</a>
+                  </li>
+                  <li>
+                    <a href="#">西木野 真姫</a>
+                  </li>
+                  <li class="divider"></li>
+                  <li>
+                    <a href="#">矢澤 にこ</a>
+                  </li>
+                  <li>
+                    <a href="#">絢瀬 絵里</a>
+                  </li>
+                  <li>
+                    <a href="#">東條 希</a>
+                  </li>
                 </ul>
-            </div>
-            <!-- /.navbar-collapse -->
+              </li>
+            </ul>
+            <form class="navbar-form navbar-right" role="search">
+              <div class="form-group">
+                <input class="form-control" type="text" placeholder="Search">
+              </div>
+              <button class="btn btn-default" type="submit">検索</button>
+            </form>
+          </div>
         </div>
-        <!-- /.container -->
-    </nav>
+      </nav>
+    </div>
 
     <!-- Page Content -->
     <div class="container">
 
-        <div class="row">
-            <div class="col-lg-12 text-left">
-                {% block content %}
-                    {{ content }}
-                {% endblock %}
-            </div>
+      <div class="row">
+        <div class="col-lg-12 text-left">
+          {% block content %}
+            {{ content }}
+          {% endblock %}
         </div>
-        <!-- /.row -->
-
+      </div>
+      <!-- /.row -->
     </div>
+
     <!-- /.container -->
 
-    <footer class="footer">
-        <div class="container">
-            <p class="text-muted">Place sticky footer content here.</p>
-        </div>
+    <footer class="bs-docs-footer text-center" role="contentinfo">
+      <p>2016 Automovite Business Division ALL RIGHTS RESERVED</p>
+      <p>内容の無断転載を禁止します<br />Do Not Copy or Duplicate Without Permission</p>
+
     </footer>
 
-
-
-
     <!-- jQuery Version 1.11.1 -->
-    <script src="{% static 'js/jquery-11.1.min.js' %}"></script>
+    <script src="{% static 'js/jquery-1.11.2.min.js' %}"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript">
+      $('.bs-component [data-toggle="popover"]').popover();
+      $('.bs-component [data-toggle="tooltip"]').tooltip();
+    </script>
 
-</body>
+  </body>
 
 </html>

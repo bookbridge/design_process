@@ -8,6 +8,7 @@ class Document(models.Model):
     summary = models.TextField(blank=True)
     description = models.TextField()
     document_id = models.IntegerField('Document ID')
+    document_url = models.URLField()
 
     def __str__(self):
         return self.name
