@@ -12,6 +12,10 @@
 .bs-callout p:last-child {
     margin-bottom: 0;
 }
+.bs-callout li:last-child {
+    margin-bottom: 0;
+}
+
 .bs-callout code {
     border-radius: 3px;
 }
@@ -43,10 +47,10 @@
     color: #d9534f;
 }
 .bs-callout-warning {
-    border-left-color: #f0ad4e;
+    border-left-color: #aa6708;
 }
 .bs-callout-warning h3 {
-    color: #f0ad4e;
+    color: #aa6708;
 }
 .bs-callout-info {
     border-left-color: #5bc0de;

@@ -1,37 +1,51 @@
 {% extends "base.html" %}
+{% load markdown_deux_tags %}
 
 {% block title %}要求の詳細{% endblock title %}
 
-{% block extrahead %}
-{% endblock %}
+{% block extrahead %}{% endblock %}
 
 {% block content %}
-<h2 class="page-header">{{ object.requirement_number }}の詳細</h2>
-<h3>Requirement Number</h3>
-<p>{{ object.requirement_number }}</p>
+  <h2 class="page-header">{{ object.requirement_number }}の詳細</h2>
+  <h3>Requirement Number</h3>
+  <p>{{ object.requirement_number }}</p>
 
-<h3>規格の原文</h3>
-<blockquote>
-    <p>{{ object.original_requirement | linebreaks }}</p>
-</blockquote>
+  <div class="bs-callout bs-callout-info">
+    <h3>規格の原文</h3>
+    <blockquote>
+      <p>{{ object.original_requirement | markdown }}</p>
+    </blockquote>
+  </div>
 
-<h3>規格に対する対応</h3>
-<p>{{ object.interpreted_requirement | linebreaks }}</p>
+  <div class="bs-callout bs-callout-danger">
+    <h3>規格に対する対応</h3>
+    <p>{{ object.interpreted_requirement | markdown }}</p>
+  </div>
 
-<h3>関連文書　Related Documents</h3>
-<ul>
-    {% for d in object.related_documents.all %}
-    <li><a href="../../document/{{d.id}}">{{ d.name }}</a></li>
-    {% endfor %}
-</ul>
+  <div class="bs-callout bs-callout-warning">
+    <h3>関連文書 Related Documents</h3>
+    <ul>
+      {% for d in object.related_documents.all %}
+        <li>
+          <a href="../../document/{{d.id}}">{{ d.name }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
 
-<h3>関連プロセス　Related Process</h3>
-<ul>
-    {% for p in object.related_process.all %}
-    <li><a href="../../process/{{ p.id }}">{{ p.name }}</a></li>
-    {% endfor %}
-</ul>
+  <div class="bs-callout bs-callout-warning">
+    <h3>関連プロセス Related Process</h3>
+    <ul>
+      {% for p in object.related_process.all %}
+        <li>
+          <a href="../../process/{{ p.id }}">{{ p.name }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
 
-<p class="pull-left"><a href="../../">Back to TOP</a>
+  <p class="pull-left" style="margin:50px 0">
+    <a href="../../">Back to TOP</a>
+  </p>
 
 {% endblock content %}

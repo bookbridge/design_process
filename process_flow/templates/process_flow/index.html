@@ -6,9 +6,13 @@
 
 {% block content %}
 <h1 class='page-header'>ISO26262情報のサイト</h1>
-<h2>プロセスフロー</h2>
+
+<h2> <span class="glyphicon glyphicon-road" aria-hidden="true" style="margin:0 10px 0 0"></span>プロセスフロー</h2>
+
 <h3>DR0~1まで</h3>
-<svg viewBox="0 0 256 600" xmlns="http://www.w3.org/2000/svg" xmlns:inkspace="http://www.inkscape.org/namespaces/inkscape" xmlns:xlink="http://www.w3.org/1999/xlink"  height="800px">
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg viewBox="0 0 256 600" xmlns="http://www.w3.org/2000/svg" xmlns:inkspace="http://www.inkscape.org/namespaces/inkscape" xmlns:xlink="http://www.w3.org/1999/xlink" height="600px">
   <defs id="defs_block">
     <filter height="1.504" id="filter_blur" inkspace:collect="always" width="1.1575" x="-0.07875" y="-0.252">
       <feGaussianBlur id="feGaussianBlur3780" inkspace:collect="always" stdDeviation="4.2" />
@@ -17,16 +21,18 @@
   <title>blockdiag</title>
   <desc />
   <ellipse cx="131" cy="146" fill="rgb(0,0,0)" rx="64" ry="20" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" />
-  <a xlink:href="/processflow/process/1/">
+  <a xlink:href="/processflow/process/1">
     <rect fill="rgb(0,0,0)" height="40" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="128" x="67" y="206" />
   </a>
-  <a xlink:href="/processflow/process/5/">
+  <a xlink:href="processflow/process/5">
     <polygon fill="rgb(0,0,0)" points="131,358 203,386 131,414 59,386 131,358" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" />
   </a>
-  <a xlink:href="/processflow/process/4/">
+  <a xlink:href="processflow/process/4">
     <rect fill="rgb(0,0,0)" height="40" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="128" x="67" y="286" />
   </a>
-  <polygon fill="rgb(0,0,0)" points="131,438 203,466 131,494 59,466 131,438" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" />
+  <a xlink:href="processflow/process/6">
+    <polygon fill="rgb(0,0,0)" points="131,438 203,466 131,494 59,466 131,438" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" />
+  </a>
   <polygon fill="rgb(0,0,0)" points="131,518 203,546 131,574 59,546 131,518" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" />
   <rect fill="#ffff99" height="62" stroke="#ffff99" width="192" x="32" y="38" />
   <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="66" x="128" y="75">ビジネス部門</text>
@@ -34,21 +40,23 @@
   <path d="M 32 100 L 224 100" fill="none" stroke="gray" />
   <ellipse cx="128" cy="140" fill="rgb(255,255,255)" rx="64" ry="20" stroke="rgb(0,0,0)" />
   <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="66" x="128" y="146">開発スタート</text>
-  <a xlink:href="/processflow/process/1/">
+  <a xlink:href="/processflow/process/1">
     <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" width="128" x="64" y="200" />
-    <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="88" x="128" y="226">製品安全計画作成</text>
+    <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="88" x="128" y="226">製品開発計画作成</text>
   </a>
-  <a xlink:href="/processflow/process/5/">
+  <a xlink:href="/processflow/process/5">
     <polygon fill="rgb(255,255,0)" points="128,352 200,380 128,408 56,380 128,352" stroke="rgb(0,0,0)" />
     <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="66" x="128" y="379">製品企画構想</text>
     <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="44" x="128" y="392">レビュー</text>
   </a>
-  <a xlink:href="/processflow/process/4/">
+  <a xlink:href="/processflow/process/4">
     <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" width="128" x="64" y="280" />
     <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="66" x="128" y="306">製品企画構想</text>
   </a>
-  <polygon fill="rgb(255,0,0)" points="128,432 200,460 128,488 56,460 128,432" stroke="rgb(0,0,0)" />
-  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="66" x="128" y="466">確証レビュー</text>
+  <a xlink:href="/processflow/process/6">
+    <polygon fill="rgb(255,0,0)" points="128,432 200,460 128,488 56,460 128,432" stroke="rgb(0,0,0)" />
+    <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="66" x="128" y="466">確証レビュー</text>
+  </a>
   <polygon fill="rgb(255,255,255)" points="128,512 200,540 128,568 56,540 128,512" stroke="rgb(0,0,0)" />
   <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="19" x="128" y="546">DR0</text>
   <path d="M 128 160 L 128 192" fill="none" stroke="rgb(0,0,0)" />
@@ -57,22 +65,23 @@
   <polygon fill="rgb(0,0,0)" points="128,279 124,272 132,272 128,279" stroke="rgb(0,0,0)" />
   <path d="M 128 320 L 128 344" fill="none" stroke="rgb(0,0,0)" />
   <polygon fill="rgb(0,0,0)" points="128,351 124,344 132,344 128,351" stroke="rgb(0,0,0)" />
+  <path d="M 128 408 L 128 424" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="128,431 124,424 132,424 128,431" stroke="rgb(0,0,0)" />
   <path d="M 128 408 L 128 420" fill="none" stroke="rgb(0,0,0)" />
   <path d="M 128 420 L 208 420" fill="none" stroke="rgb(0,0,0)" />
   <path d="M 208 420 L 208 265" fill="none" stroke="rgb(0,0,0)" />
   <path d="M 128 265 L 208 265" fill="none" stroke="rgb(0,0,0)" />
   <path d="M 128 265 L 128 272" fill="none" stroke="rgb(0,0,0)" />
   <polygon fill="rgb(0,0,0)" points="128,279 124,272 132,272 128,279" stroke="rgb(0,0,0)" />
-  <path d="M 128 408 L 128 424" fill="none" stroke="rgb(0,0,0)" />
-  <polygon fill="rgb(0,0,0)" points="128,431 124,424 132,424 128,431" stroke="rgb(0,0,0)" />
   <path d="M 128 488 L 128 504" fill="none" stroke="rgb(0,0,0)" />
   <polygon fill="rgb(0,0,0)" points="128,511 124,504 132,504 128,511" stroke="rgb(0,0,0)" />
-  <rect fill="white" height="15" stroke="rgb(0,0,0)" width="40" x="188" y="343" />
-  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="24" x="208" y="356">N　G</text>
+  <rect fill="white" height="15" stroke="rgb(0,0,0)" width="35" x="191" y="343" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="19" x="208" y="356">N G</text>
 </svg>
 
 
-<h2>ISO26262 要求の一覧</h2>
+
+<h2> <span class="glyphicon glyphicon-th-list" aria-hidden="true" style="margin:0 10px 0 0"></span>ISO26262 要求の一覧</h2>
 <table class="table table-striped table-bordered">
     <thead>
         <tr>
@@ -89,7 +98,7 @@
     {% endfor %}
     </tbody>
 </table>
-<h2>プロセスの一覧</h2>
+<h2> <span class="glyphicon glyphicon-th-list" aria-hidden="true" style="margin:0 10px 0 0"></span>プロセスの一覧</h2>
 <table class="table table-striped table-bordered">
     <thead>
         <tr>
@@ -107,7 +116,7 @@
     </tbody>
 </table>
 
-<h2>ドキュメントの一覧</h2>
+<h2> <span class="glyphicon glyphicon-th-list" aria-hidden="true" style="margin:0 10px 0 0"></span>ドキュメントの一覧</h2>
 <table class="table table-striped table-bordered">
     <thead>
         <tr>

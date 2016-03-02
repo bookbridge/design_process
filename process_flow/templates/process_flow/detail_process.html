@@ -20,12 +20,12 @@
     <p>{{ object.summary | markdown }}</p>
   </div>
 
-  <div class="bs-callout bs-callout-primary">
+  <div class="bs-callout bs-callout-danger">
     <h3>説明 Description</h3>
     <p>{{ object.description | markdown }}</p>
   </div>
 
-  <div class="bs-callout-warning">
+  <div class="bs-callout bs-callout-warning">
     <h3>入力文書 Input Document</h3>
     <ul>
       {% for i in in_docs %}
@@ -36,7 +36,7 @@
     </ul>
   </div>
 
-  <div class="bs-callout-warning">
+  <div class="bs-callout bs-callout-warning">
     <h3>出力文書 Output Document</h3>
     <ul>
       {% for i in out_docs %}
@@ -47,7 +47,7 @@
     </ul>
   </div>
 
-  <div class="bs-callout-warning">
+  <div class="bs-callout bs-callout-warning">
     <h3>関連する規格要求 Related Requirement</h3>
     <ul>
       {% for r in object.requirement_set.all %}
@@ -57,7 +57,9 @@
       {% endfor %}
     </ul>
   </div>
-  <p class="pull-left">
-    <a href="../../">Back to TOP</a>
 
-  {% endblock content %}
+  <p class="pull-left" style="margin: 50px 0">
+    <a href="../../">Back to TOP</a>
+  </p>
+
+{% endblock content %}

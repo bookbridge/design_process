@@ -1,0 +1,17 @@
+// Go to  http://interactive.blockdiag.com/actdiag/ and create SVG Image
+// For more details, see  http://blockdiag.com/en/index.html
+
+actdiag {
+   lane "ビジネス部門"
+   { "開発スタート"; "製品開発計画作成"; "製品企画構想"; "製品企画構想レビュー"; "確証レビュー"; "DR0"}
+   "開発スタート" [shape = "ellipse"]
+   "製品開発計画作成" [href = "/processflow/process/1"]
+   "製品企画構想"  [href = "~/processflow/process/4"]
+   "製品企画構想レビュー" [shape = "flowchart.condition", color = yellow, href = "~/processflow/process/5"]
+   "確証レビュー"  [shape = "flowchart.condition", color = red, href = "~/processflow/process/6"]
+   "DR0"  [shape = "flowchart.condition"]
+
+ "開発スタート" -> "製品開発計画作成" -> "製品企画構想" -> "製品企画構想レビュー" -> "確証レビュー" -> "DR0"
+ "製品企画構想レビュー" -> "製品企画構想" [label = "N G"]
+
+}

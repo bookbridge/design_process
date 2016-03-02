@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load markdown_deux_tags %}
 
 {% block title %}ドキュメントの詳細{% endblock title %}
 
@@ -8,33 +9,48 @@
   <h2 class="page-header">{{ object.name }}の詳細</h2>
   <h3>ID</h3>
   <p>{{ object.id }}</p>
-  <h3>ドキュメント名 Document Name</h3>
-  <p>{{ object.name }}</p>
-  <h3>説明 Description</h3>
-  <p>{{ object.description }}</p>
 
-  <h3>関連する工程 Related Process</h3>
-  <ul>
-    {% for r in rel_processes %}
-      <li>
-        <a href="../../process/{{ r.process.id }}">{{ r.process.name }}</a>
-      </li>
-    {% endfor %}
-  </ul>
+  <div class="bs-callout bs-callout-info">
+    <h3>ドキュメント名 Document Name</h3>
+    <p>{{ object.name }}</p>
+  </div>
 
-  <h3>テンプレート・ガイドライン保存先</h3>
-  <p><a href="{{ object.document_url}}">{{ object.document_url }}</a></p>
+  <div class="bs-callout bs-callout-danger">
+    <h3>説明 Description</h3>
+    <p>{{ object.description | markdown }}</p>
+  </div>
 
-  <h3>関連する規格要求 Related Requirement</h3>
-  <ul>
-    {% for r in object.requirement_set.all %}
-      <li>
-        <a href="../../requirement/{{ r.id }}">{{ r.requirement_number }}</a>
-      </li>
-    {% endfor %}
-  </ul>
+  <div class="bs-callout bs-callout-warning">
+    <h3>関連する工程 Related Process</h3>
+    <ul>
+      {% for r in rel_processes %}
+        <li>
+          <a href="../../process/{{ r.process.id }}">{{ r.process.name }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
 
-  <p class="pull-left">
+  <div class="bs-callout bs-callout-warning">
+    <h3>テンプレート・ガイドライン保存先</h3>
+    <p>
+      <a href="{{ object.document_url}}">{{ object.document_url }}</a>
+    </p>
+  </div>
+
+  <div class="bs-callout bs-callout-warning">
+    <h3>関連する規格要求 Related Requirement</h3>
+    <ul>
+      {% for r in object.requirement_set.all %}
+        <li>
+          <a href="../../requirement/{{ r.id }}">{{ r.requirement_number }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <p class="pull-left" style="margin:50px 0">
     <a href="../../">Back to TOP</a>
+  </p>
 
-  {% endblock content %}
+{% endblock content %}
