@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load markdown_deux_tags %}
+
+{% block title %}FAQの一覧{% endblock title %}
+
+{% block extrahead %}{% endblock %}
+
+{% block content %}
+  <h2 class="page-header">FAQの一覧</h2>
+
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <td>Updated</td>
+        <td>Question</td>
+      </tr>
+    </thead>
+    <tbody>
+      {% for faq in faqs %}
+        <tr>
+          <td>
+            {{ faq.pub_date }}
+          </td>
+          <td>
+            <a href="./{{ faq.id }}">{{ faq.title }}</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <p class="pull-left" style="margin:50px 0">
+    <a href="../../">Back to TOP</a>
+  </p>
+
+{% endblock content %}

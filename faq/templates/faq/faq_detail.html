@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load markdown_deux_tags %}
+
+{% block title %}FAQの詳細{% endblock title %}
+
+{% block extrahead %}{% endblock %}
+
+{% block content %}
+  <h2 class="page-header">{{ object.title }}</h2>
+  <h3>ID</h3>
+  <p>{{ object.id }}</p>
+
+  <h3>Updated</h3>
+  <p>{{ object.pub_date }}
+
+  <div class="bs-callout bs-callout-info">
+    <h3>Question</h3>
+    <p>{{ object.title }}</p>
+  </div>
+
+  <div class="bs-callout bs-callout-danger">
+    <h3>Answer</h3>
+    <p>{{ object.contents | markdown }}</p>
+  </div>
+
+
+
+  <p class="pull-left" style="margin:50px 0">
+    <a href="../../">Back to TOP</a>
+  </p>
+
+{% endblock content %}

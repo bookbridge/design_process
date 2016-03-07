@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'process_flow',
+    'faq',
     'bootstrapform',
     'debug_toolbar',
     'markdown_deux',
