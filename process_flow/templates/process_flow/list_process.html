@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load markdown_deux_tags %}
+
+{% block title %}FAQの一覧{% endblock title %}
+
+{% block extrahead %}{% endblock %}
+
+{% block content %}
+  <h2 class="page-header"> <span class="glyphicon glyphicon-th-list" aria-hidden="true" style="margin:0 10px 0 0"></span>プロセスの一覧</h2>
+
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <td>工程名 Process name</td>
+        <td>概要 Summary</td>
+      </tr>
+    </thead>
+    <tbody>
+      {% for p in processes %}
+        <tr>
+          <td>
+            <a href="./{{ p.id }}">{{ p.name }}</a>
+          </td>
+          <td>
+            {{ p.summary | markdown }}
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <p class="pull-left" style="margin:50px 0">
+    <a href="../../">Back to TOP</a>
+  </p>
+
+{% endblock content %}

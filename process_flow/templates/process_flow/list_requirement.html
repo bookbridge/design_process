@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load markdown_deux_tags %}
+
+{% block title %}FAQの一覧{% endblock title %}
+
+{% block extrahead %}{% endblock %}
+
+{% block content %}
+  <h2 class="page-header"><span class="glyphicon glyphicon-th-list" aria-hidden="true" style="margin:0 10px 0 0"></span>Requirementの一覧</h2>
+
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <td>Requirement No</td>
+        <td>Contents</td>
+      </tr>
+    </thead>
+    <tbody>
+      {% for req in requirements %}
+        <tr>
+          <td>
+            <a href="./{{ req.id }}">{{ req.requirement_number }}</a>
+          </td>
+          <td>
+          {{ req.original_requirement | markdown }}
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <p class="pull-left" style="margin:50px 0">
+    <a href="../../">Back to TOP</a>
+  </p>
+
+{% endblock content %}

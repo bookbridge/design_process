@@ -16,6 +16,13 @@ class IndexView(TemplateView):
     def requirements(self):
         return Requirement.objects.all()
 
+
+class DocumentListView(ListView):
+    model = Document
+    template_name = 'process_flow/list_document.html'
+    context_object_name = 'documents'
+
+
 class DocumentDetailView(DetailView):
     model = Document
     template_name = 'process_flow/detail_document.html'
@@ -25,6 +32,11 @@ class DocumentDetailView(DetailView):
         # Add in a QuerySet
         context['rel_processes'] = Relationship.objects.filter(document__name=self.object.name)
         return context
+
+class ProcessListView(ListView):
+    model = Process
+    template_name = 'process_flow/list_process.html'
+    context_object_name = 'processes'
 
 
 class ProcessDetailView(DetailView):
@@ -43,3 +55,8 @@ class RequirementDetailView(DetailView):
     model = Requirement
     template_name = 'process_flow/detail_requirement.html'
 
+
+class RequirementListView(ListView):
+    model = Requirement
+    template_name = 'process_flow/list_requirement.html'
+    context_object_name = 'requirements'
