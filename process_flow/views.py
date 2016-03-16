@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
-from django.views.generic import TemplateView, DetailView, ListView
+from django.views.generic import TemplateView, DetailView, ListView, CreateView, UpdateView, DeleteView
 from process_flow.models import Process, Document, Relationship, Requirement
+from process_flow.forms import DocumentForm
 # Create your views here.
 
 
@@ -30,8 +31,15 @@ class DocumentDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super(DocumentDetailView, self).get_context_data(**kwargs)
         # Add in a QuerySet
-        context['rel_processes'] = Relationship.objects.filter(document__name=self.object.name)
+        context['rel_processes'] = Relationship.objects.filter(
+            document__name=self.object.name)
         return context
+
+
+class DocumentCreateView(CreateView):
+    model = Document
+    form_class = DocumentForm
+    
 
 class ProcessListView(ListView):
     model = Process
@@ -46,8 +54,10 @@ class ProcessDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super(ProcessDetailView, self).get_context_data(**kwargs)
         # Add in a QuerySet
-        context['in_docs'] = Relationship.objects.filter(relation='input', process__name=self.object.name)
-        context['out_docs'] = Relationship.objects.filter(relation='output', process__name=self.object.name)
+        context['in_docs'] = Relationship.objects.filter(
+            relation='input', process__name=self.object.name)
+        context['out_docs'] = Relationship.objects.filter(
+            relation='output', process__name=self.object.name)
         return context
 
 

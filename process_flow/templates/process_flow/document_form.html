@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load bootstrap %}
+
+{% block title %}FAQの一覧{% endblock title %}
+
+{% block extrahead %}{% endblock %}
+
+{% block content %}
+  <h2 class="page-header"> <span class="glyphicon glyphicon-th-list" aria-hidden="true" style="margin:0 10px 0 0"></span>Documentの作成</h2>
+
+  <div id="main">
+         <form method="post" action="" name="detail" class="form-horizontal">
+             <fieldset>
+                 {% csrf_token %}
+
+                 {{ form | bootstrap_horizontal }}
+
+                 <input type="submit" id="save" value="Save">
+             </fieldset>
+         </form>
+     </div>
+
+
+  <p class="pull-left" style="margin:50px 0">
+    <a href="../../">Back to TOP</a>
+  </p>
+
+{% endblock content %}
